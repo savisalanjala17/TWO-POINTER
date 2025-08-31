@@ -27,6 +27,34 @@ class Solution {
 }
 
 
+
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+
+        int [] res = new int [nums.length];
+        int left=0;
+        int right=nums.length-1;
+        int l=nums.length-1;
+
+        for(int i=0;i<nums.length;i++){
+
+            if(Math.abs(nums[left])>Math.abs(nums[right])){
+                 res[l--]=nums[left]*nums[left];
+                 left++;
+        }
+            else{
+                res[l--]=nums[right]*nums[right];
+                right--;
+            }
+        }
+
+
+
+        return res;
+    }
+}
+
+
 977. Squares of a Sorted Array
 Solved
 Easy
