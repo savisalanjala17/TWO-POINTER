@@ -8,6 +8,50 @@ X = 32
 Output : -31 (1+30)
 
 
+BRUTE FORCE:
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        
+        int maxsofar=0;
+        
+        int a[] = {1,4,5,7};
+        int b[] = {10,20,30,40};
+        int x = 32;
+        int f=0;
+        int l=0;
+        
+        for(int i=0; i<a.length; i++){
+            for(int j=0; j<b.length; j++){
+                
+                if(a[i]+b[j]==x){
+                    System.out.print(a[i]+" "+b[j]);
+                    return;
+                }
+                
+                if(a[i]+b[j]>maxsofar && a[i]+b[j]<x){
+                    maxsofar=a[i]+b[j];
+                    f=a[i];
+                    l=b[j];
+                    
+                    
+                }
+                
+                
+            }
+        }
+        
+        System.out.print(f+" "+l);
+        
+        }
+}
+
+
+OPTIMAL:
+
 
 import java.util.*;
 public class Main
